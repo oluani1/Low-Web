@@ -1,18 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conférences Île-de-France</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez tous les événements en Île-de-France. Spectacles, concerts, expositions et plus encore.">
+    <title>IDEvent - L'événement à grande vitesse</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Conférences Île-de-France</h1>
-  </header>
-  <main>
-    <p>Site vitrine low-tech des événements à venir en Île-de-France.</p>
-  </main>
-  <script src="script.js"></script>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link"> 
+                <div class="logo">
+                    <img src="images/logo.ico" alt="Logo IDEvent Globe">
+                    <span>IDEvent</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
+                    <li><a href="#notre-vision">Notre vision</a></li>
+                    <li><a href="#publication">Publication</a></li>
+                    <li><a href="#contact">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- L'image de fond est gérée en CSS. -->
+            <div class="hero-content">
+                <h1>L'événement <br>à grande <br>vitesse</h1>
+            </div>
+        </section>
+
+        <section class="intro-text" id="qui-sommes-nous">
+            <div class="container">
+                <h2>Êtes-vous aussi en recherche d'activités ce <span class="highlight">week-end</span> ?</h2>
+                <p>Chez IDEvent, nous sommes convaincus que la culture, le lien social et l'accès à l'information sont les piliers d'une société vivante et inclusive. Nous rassemblons donc en un seul espace l'ensemble des événements d'Île-de-France afin de faciliter votre découverte et encourager votre curiosité et renforcer le tissu local, et ce qu'il soit artistique, associatif ou citoyen. Notre mettons en lumière la richesse et la diversité de la région, tout en valorisant les initiatives écoresponsables, accessibles et participatives. C'est ainsi grâce à nos organisateurs engagés que nous pouvons imaginer aujourd'hui un territoire plus connecté, plus vibrant, et à la portée de tous.</p>
+            </div>
+        </section>
+
+        <section class="explore-events" id="publication">
+            <div class="container">
+                <h2>Explorez</h2>
+                <div class="event-cards-container">
+                    <article class="event-card">
+                        <img src="images/spectacle.webp" alt="Un théâtre avec une scène éclairée pour Spectacles" loading="lazy">
+                        <h3>Spectacle</h3>
+                        <p>Un catalogue riche où théâtres, opéras, danses, concerts classiques et festivals divers vous attendent.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                    <article class="event-card">
+                        <img src="images/concert.webp" alt="Un groupe de musique sur scène devant une foule pour Concerts" loading="lazy">
+                        <h3>Concert</h3>
+                        <p>Du rock au rap, de l'électro au jazz, des musiques du monde à la pop, et le tout en salles ou plein air.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                    <article class="event-card">
+                        <img src="images/exposition.webp" alt="Une statue d'ange dans un musée pour Expositions" loading="lazy">
+                        <h3>Exposition</h3>
+                        <p>Retrouvez l'ensemble des expositions temporaires ou permanentes, des grands musées au galeries indépendantes.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                    <article class="event-card">
+                        <img src="images/salon.webp" alt="Un grand hall avec des stands pour Salons et Marchés" loading="lazy">
+                        <h3>Salon & Marché</h3>
+                        <p>Marché de créateurs, brocantes et vide-greniers à gogo; des salons professionnels ou encore grand public.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-info-contact" id="notre-vision">
+            <div class="container">
+                <h2>Vous voulez en savoir plus ?</h2>
+                <p>Si vous êtes intéressés en plus grand détail, n'hésitez pas à nous contacter ! Notre numéro sera listée ci-dessous :</p>
+                <p class="phone-number">+33 01 23 45 67 89</p>
+            </div>
+        </section>
+
+        <section class="contact-form-section" id="contact">
+            <div class="container">
+                <h2>Vous pouvez aussi nous envoyer un message au travers de la boîte messengère ci-contre.</h2>
+                <form action="#" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nom_prenom">Votre nom et prénom...*</label>
+                            <input type="text" id="nom_prenom" name="nom_prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="entreprise">Votre entreprise...*</label>
+                            <input type="text" id="entreprise" name="entreprise" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Votre numéro de téléphone...*</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre messagerie électro...*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pays">Votre pays...*</label>
+                            <input type="text" id="pays" name="pays" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Votre message...*</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-logo-info">
+                 <a href="index.html" class="logo-link"> 
+                    <div class="logo">
+                        <img src="images/logo_big.webp" alt="Logo IDEvent Globe">
+                        <span>IDEvent</span>
+                    </div>
+                </a>
+                <p>Tous les événements en Île-de-France, au même endroit.</p>
+            </div>
+            <div class="footer-contact-details">
+                <p><img src="images/localisation_logo.webp" alt="Icône localisation" class="footer-icon" loading="lazy"> 30 Avenue de la République, 94800 Villejuif</p>
+                <p><img src="images/mail_logo.webp" alt="Icône email" class="footer-icon" loading="lazy"> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
+                <p><img src="images/phone_logo.webp" alt="Icône téléphone" class="footer-icon" loading="lazy"> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

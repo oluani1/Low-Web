@@ -187,6 +187,422 @@ img { max-width: 100%; height: auto; display: block; }
     margin-right: 10px;
 }
 
+/* Qui sommes nous ? */
+
+.site-header nav ul li a.active {
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.page-intro {
+    padding: 5em 0; 
+    background-color: var(--dark-bg);
+    overflow: hidden; 
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 50px; 
+    align-items: center;
+}
+
+.intro-text-content h2 {
+    font-size: clamp(2.4rem, 5vw, 3.2rem); 
+    color: var(--text-color);
+    margin-bottom: 0.6em;
+    line-height: 1.25;
+    font-weight: 700; 
+}
+
+.intro-text-content h2 .highlight-orange {
+    background-color: var(--accent-orange);
+    color: #181818; 
+    padding: 0.05em 0.2em; 
+    border-radius: 4px;
+    display: inline; 
+    box-decoration-break: clone; 
+    -webkit-box-decoration-break: clone; 
+}
+
+.intro-text-content p {
+    font-size: 1.05rem; 
+    color: var(--text-light-gray);
+    max-width: 580px;
+    line-height: 1.7; 
+}
+
+.intro-image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; 
+}
+
+/* Section des membres de l'équipe */
+.team-members {
+    padding: 4em 0 5em; 
+    background-color: #252525;
+}
+
+.team-grid-members {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; /* Ajuster le gap si nécessaire */
+}
+
+.team-member-card {
+    background-color: var(--card-bg);
+    padding: 25px 20px; 
+    border-radius: 10px; 
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35); 
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto; 
+    border: 4px solid var(--primary-blue); 
+}
+
+.team-member-card h4 {
+    font-size: 1.25rem; 
+    color: var(--text-color);
+    margin-bottom: 0.4em;
+    font-weight: 600;
+}
+
+.team-member-card .member-role {
+    font-size: 0.85rem; 
+    color: var(--primary-blue);
+    font-weight: 500;
+    margin-bottom: 1em;
+    min-height: 2.5em; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.team-member-card .member-quote {
+    font-size: 0.9rem;
+    color: var(--text-light-gray);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 0; 
+}
+
+/* Footer 2 */
+.footer-logo-info .copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 1em;
+}
+
+/* Section Vision */
+
+.vision-intro-section .intro-text-content h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
+}
+
+.vision-pillars {
+    padding: 4em 0;
+    background-color: var(--dark-bg);
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.pillars-image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.pillars-text-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px; 
+}
+
+.pillar-item {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+}
+
+.pillar-icon img {
+    width: 150px;  
+    height: 150px; 
+    object-fit: contain; 
+    /* flex-shrink: 0; /* Empêche icône de rétrécir si espace limité */
+}
+
+.pillar-text h3 {
+    font-size: 1.2rem; 
+    color: var(--primary-blue);
+    margin-bottom: 0.4em;
+    line-height: 1.3; /* assure un bon espacement si le titre est sur 2 lignes */
+}
+
+.pillar-text p {
+    font-size: 0.9rem;
+    color: var(--text-light-gray);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.vision-testimonials {
+    padding: 4em 0 5em;
+    background-color: #252525; 
+}
+
+.vision-testimonials h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-color); 
+    margin-bottom: 1.5em;
+}
+.vision-testimonials h2 .highlight-blue { 
+    background-color: var(--primary-blue);
+    color: var(--text-color);
+    padding: 0.1em 0.25em;
+    border-radius: 4px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column; 
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.testimonial-author img {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.testimonial-author .author-name {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    line-height: 1.3;
+}
+.testimonial-author .author-role {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    display: block; 
+}
+
+.testimonial-quote {
+    font-size: 0.95rem;
+    color: var(--text-light-gray);
+    line-height: 1.6;
+    font-style: italic; 
+    border-left: 3px solid var(--accent-orange); 
+    padding-left: 15px;
+    margin: 0; 
+}
+.testimonial-quote p {
+    margin-bottom: 0;
+}
+
+/* Section Nos Engagements */
+
+.engagement-intro-section .intro-text-content h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3rem); /* Taille adaptée pour titre */
+}
+
+.green-web-benefits {
+    padding: 4em 0;
+    background-color: #252525;
+}
+
+.green-web-benefits h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.8em; /* Un peu plus de marge */
+}
+
+.green-web-benefits h2 .highlight-blue {
+    background-color: var(--primary-blue);
+    color: var(--text-color);
+    padding: 0.1em 0.25em;
+    border-radius: 4px;
+}
+
+.benefits-list { /* Anciennement .benefits-grid */
+    display: flex; /* Utiliser flex pour empiler verticalement */
+    flex-direction: column;
+    gap: 40px; /* Espace entre chaque avantage détaillé */
+}
+
+.benefit-item-detailed {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px; /* Bords un peu plus arrondis */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: grid; /* Grille pour l'icône/image et le texte */
+    grid-template-columns: auto 1fr; /* L'icône prend sa taille, le texte le reste */
+    gap: 25px;
+    align-items: flex-start; /* Aligner en haut si le contenu a des hauteurs différentes */
+}
+
+.benefit-item-icon-container {
+    /* Vous pouvez ajuster la taille ici si vous utilisez une image plus grande qu'une icône */
+    /* width: 150px; */ /* Exemple si vous voulez une largeur fixe pour l'image */
+    /* text-align: center; */ /* Pour centrer l'icône si le conteneur est plus large */
+}
+
+.benefit-main-icon { /* Classe pour l'image principale de l'avantage */
+    width: 70px;  /* Taille par défaut pour les icônes proéminentes */
+    height: 70px;
+    object-fit: contain;
+    /* Si vous voulez des images plus grandes, augmentez ici et ajustez le conteneur */
+    /* Exemple pour une image plus grande:
+    width: 120px;
+    height: 120px;
+    border-radius: 8px; */
+}
+
+.benefit-item-text-content h3 {
+    font-size: 1.5rem; /* Titre de l'avantage plus grand */
+    color: var(--primary-blue);
+    margin-bottom: 0.7em;
+}
+
+.benefit-item-text-content p {
+    font-size: 0.95rem; /* Taille du texte des paragraphes */
+    color: var(--text-light-gray);
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+.benefit-item-text-content ul {
+    list-style: disc; /* Ou none si vous utilisez des ::before pour des puces custom */
+    padding-left: 20px; /* Indentation standard pour les listes */
+    margin-bottom: 1em;
+}
+
+.benefit-item-text-content ul li {
+    font-size: 0.9rem;
+    color: var(--text-light-gray);
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+}
+
+.benefit-item-text-content strong { /* Pour mettre en évidence les chiffres/faits */
+    color: var(--accent-orange); /* Ou var(--primary-blue) selon votre préférence */
+    font-weight: 600;
+}
+
+.site-comparison {
+    padding: 4em 0 5em;
+    background-color: var(--dark-bg); /* Retour fond principal */
+}
+
+.site-comparison h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5em;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.comparison-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.comparison-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.comparison-card.id-event-low-web h3 {
+    color: var(--primary-blue); 
+}
+.comparison-card.standard-web h3 {
+    color: var(--accent-orange); 
+}
+
+.comparison-card ul {
+    list-style: none; 
+    padding-left: 0;
+    margin: 0;
+}
+
+.comparison-card ul li {
+    font-size: 0.95rem;
+    color: var(--text-light-gray);
+    margin-bottom: 0.7em;
+    line-height: 1.5;
+    padding-left: 25px; /* Espace pour texte */
+    position: relative;
+}
+
+.comparison-card ul li::before {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.comparison-card.id-event-low-web ul li::before {
+    content: "✓"; /* Coche pour avantages */
+    color: #4CAF50; /* Vert positif */
+}
+
+.comparison-card.standard-web ul li::before {
+    content: "✗"; /* Croix inconvénients */
+    color: #F44336; /* Rouge négatif */
+}
+.comparison-conclusion {
+    text-align: center;
+    margin-top: 2.5em;
+    font-size: 1.1rem;
+    color: var(--text-light-gray);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ______________________________________________ */ 
+
+/* Media Queries */
+
 @media (max-width: 992px) {
     .event-card {
         width: calc((100% - 40px) / 3); 
@@ -203,6 +619,56 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-content h1 {
         font-size: clamp(1.8rem, 4.5vw, 2.5rem);
     }
+
+    /* Qui sommes nous ? */
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .intro-text-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .intro-image-content {
+        margin-top: 40px;
+        max-width: 400px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .team-grid-members {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px;
+    }
+
+    /* Section Vision */
+
+    .pillars-grid {
+        grid-template-columns: 1fr; 
+    }
+    .pillars-image-content {
+        max-width: 500px;
+        margin: 0 auto 30px auto; 
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    /* Section Engagements */
+
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .comparison-grid {
+        grid-template-columns: 1fr; /* Les cartes de comparaison passent l'une sous l'autre */
+    }
+     .comparison-card {
+        margin-bottom: 30px; /* Espace entre cartes quand elles sont empilées */
+    }
+    .comparison-card:last-child {
+        margin-bottom: 0;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -230,6 +696,48 @@ img { max-width: 100%; height: auto; display: block; }
     .footer-container { flex-direction: column; align-items: center; text-align: center; }
     .footer-logo-info, .footer-contact-details { width: 100%; margin-bottom: 20px; }
     .footer-contact-details p { justify-content: center; }
+
+    /* Qui sommes nous ? */
+
+    .intro-text-content h2 {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+    }
+    .intro-text-content p {
+        font-size: 1rem;
+    }
+
+    /* Section Vision */
+
+    .vision-intro-section .intro-grid { 
+    }
+     .vision-intro-section .intro-text-content h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .pillars-text-content {
+        grid-template-columns: 1fr; 
+    }
+    .pillar-item {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+    .pillar-icon img {
+        margin-bottom: 10px;
+    }
+    .vision-testimonials h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Section Engagements */
+
+    .engagement-intro-section .intro-text-content h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+    .green-web-benefits h2,
+    .site-comparison h2 {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 480px) {

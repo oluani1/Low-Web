@@ -26,8 +26,6 @@ p { margin-bottom: 1em; }
 a { color: var(--primary-blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; display: block; }
-.green-hover {color: white; text-decoration: none;}
-.green-hover:hover {color: green; text-decoration: underline;}
 
 /* Header du site */
 .site-header {

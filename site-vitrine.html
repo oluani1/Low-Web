@@ -74,6 +74,16 @@
       text-align: center;
     }
 
+    .filters {
+      text-align: center;
+      margin: 1rem 0 2rem;
+    }
+
+    .filters span {
+      margin: 0 0.5rem;
+      font-weight: bold;
+    }
+
     .event-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -162,42 +172,90 @@
 
   <main>
     <h1>Événements à venir</h1>
+    <p style="text-align:center; font-size:0.9rem; color:#666;">Page 1 sur 1 – 8 événements affichés</p>
 
-    <section class="event-grid">
-      <div class="event-card">
-        <img src="images/concert.webp" alt="Concert live">
-        <h3>Concert Plein Air</h3>
-        <p>25 juillet – Parc Floral</p>
-        <p>🎶 Musique</p>
-        <a href="#" class="event-link">En savoir plus</a>
-      </div>
-      <div class="event-card">
-        <img src="images/spectacle.webp" alt="Théâtre classique">
-        <h3>Soirée Théâtre</h3>
-        <p>30 juillet – Théâtre du Nord</p>
-        <p>🎭 Spectacle</p>
-        <a href="#" class="event-link">En savoir plus</a>
-      </div>
-      <div class="event-card">
-        <img src="images/exposition.webp" alt="Statue musée">
-        <h3>Exposition Sculptures</h3>
-        <p>Jusqu’au 15 août – Musée Rodin</p>
-        <p>🖼️ Exposition</p>
-        <a href="#" class="event-link">En savoir plus</a>
-      </div>
-      <div class="event-card">
-        <img src="images/salon.webp" alt="Salon étudiant">
-        <h3>Salon Étudiant</h3>
-        <p>7 septembre – Grande Halle</p>
-        <p>📚 Salon</p>
-        <a href="#" class="event-link">En savoir plus</a>
-      </div>
-    </section>
+    <div class="filters">
+      <strong>Catégories :</strong>
+      <span>🎶 Musique</span>
+      <span>🎭 Théâtre</span>
+      <span>🖼️ Exposition</span>
+      <span>📚 Salon</span>
+      <span>🎬 Cinéma</span>
+      <span>📖 Littérature</span>
+      <span>🛍️ Marché</span>
+      <span>🌍 Conférence</span>
+    </div>
+
+<section class="event-grid">
+  <div class="event-card">
+    <img src="images/concert.webp" alt="Concert Plein Air">
+    <h3>Concert Plein Air</h3>
+    <p>25 juillet – Parc Floral</p>
+    <p>🎶 Musique</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/spectacle.webp" alt="Soirée Théâtre">
+    <h3>Soirée Théâtre</h3>
+    <p>30 juillet – Théâtre du Nord</p>
+    <p>🎭 Théâtre</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/exposition.webp" alt="Exposition Sculptures">
+    <h3>Exposition Sculptures</h3>
+    <p>Jusqu’au 15 août – Musée Rodin</p>
+    <p>🖼️ Exposition</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/salon.webp" alt="Salon Étudiant">
+    <h3>Salon Étudiant</h3>
+    <p>7 septembre – Grande Halle</p>
+    <p>📚 Salon</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/diversite_logo.webp" alt="Festival Cinéma Vert">
+    <h3>Festival Cinéma Vert</h3>
+    <p>12 août – Cinéma Studio 28</p>
+    <p>🎬 Cinéma</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/smarthpone-user.webp" alt="Rencontre Auteurs">
+    <h3>Rencontre Auteurs</h3>
+    <p>19 août – Librairie des Champs</p>
+    <p>📖 Littérature</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/exposition - Copie.webp" alt="Marché Artisanal">
+    <h3>Marché Artisanal</h3>
+    <p>22 août – Place des Arts</p>
+    <p>🛍️ Marché</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+
+  <div class="event-card">
+    <img src="images/logo.ico" alt="Conférence Climat">
+    <h3>Conférence Climat</h3>
+    <p>3 septembre – Hôtel de Ville</p>
+    <p>🌍 Conférence</p>
+    <a href="evenement.html" class="event-link">En savoir plus</a>
+  </div>
+</section>
+
   </main>
 
   <footer>
     <p class="footer-note">Page optimisée selon les principes du Low Web. Images WebP, CSS intégré, aucune dépendance externe.</p>
   </footer>
-
 </body>
 </html>

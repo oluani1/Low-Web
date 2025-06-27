@@ -87,10 +87,40 @@
       color: #444;
     }
 
-    svg {
-      width: 100%;
-      height: auto;
+    .bar-section {
       margin: 2rem 0;
+    }
+
+    .bar-title {
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .bar-container {
+      background: #e0e0e0;
+      border-radius: 5px;
+      height: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-idevent {
+      background-color: #27ae60;
+      height: 100%;
+      width: 21%;
+    }
+
+    .bar-helloasso {
+      background-color: #ccc;
+      height: 100%;
+      width: 100%;
+    }
+
+    .bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
     }
 
     table {
@@ -159,24 +189,35 @@
 
   <main>
     <h1>Comparatif chiffré</h1>
+
     <p class="intro">
       Nous avons comparé notre page vitrine avec une page événementielle classique (HelloAsso – catégorie sport).
       L'objectif : montrer qu'on peut informer efficacement avec 10x moins de ressources.
     </p>
 
-    <svg viewBox="0 0 100 60" preserveAspectRatio="none">
-      <text x="0" y="10" font-size="5">⏱️ Chargement</text>
-      <rect x="0" y="15" width="30" height="6" fill="#27ae60" />
-      <rect x="0" y="24" width="80" height="6" fill="#ccc" />
-      <text x="32" y="20" font-size="4">0,6 s</text>
-      <text x="82" y="29" font-size="4">2,8 s</text>
+    <div class="bar-section">
+      <div class="bar-title">⏱️ Temps de chargement moyen</div>
+      <div class="bar-container">
+        <div class="bar-helloasso"></div>
+        <div class="bar-idevent" style="position:absolute; left:0;"></div>
+      </div>
+      <div class="bar-labels">
+        <span>IDEvent : 0,6 s</span>
+        <span>HelloAsso : 2,8 s</span>
+      </div>
+    </div>
 
-      <text x="0" y="40" font-size="5">📦 Poids</text>
-      <rect x="0" y="45" width="15" height="6" fill="#27ae60" />
-      <rect x="0" y="54" width="75" height="6" fill="#ccc" />
-      <text x="17" y="50" font-size="4">150 Ko</text>
-      <text x="77" y="59" font-size="4">1,6 Mo</text>
-    </svg>
+    <div class="bar-section">
+      <div class="bar-title">📦 Poids total de la page</div>
+      <div class="bar-container">
+        <div class="bar-helloasso"></div>
+        <div class="bar-idevent" style="width: 9%; position:absolute; left:0;"></div>
+      </div>
+      <div class="bar-labels">
+        <span>IDEvent : 150 Ko</span>
+        <span>HelloAsso : 1,6 Mo</span>
+      </div>
+    </div>
 
     <table>
       <thead>

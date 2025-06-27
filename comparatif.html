@@ -69,7 +69,7 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -87,66 +87,70 @@
       color: #444;
     }
 
-    .bar-section {
-      margin: 2rem 0;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
     }
 
-    .bar-title {
-      font-weight: bold;
-      margin-bottom: 0.4rem;
-    }
-
-    .bar-container {
-      background: #e0e0e0;
-      border-radius: 5px;
-      height: 20px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .bar-idevent {
-      background-color: #27ae60;
-      height: 100%;
-      width: 21%;
-    }
-
-    .bar-helloasso {
-      background-color: #ccc;
-      height: 100%;
-      width: 100%;
-    }
-
-    .bar-labels {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      margin-top: 0.4rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 2rem 0;
-      font-size: 0.95rem;
-    }
-
-    th, td {
+    .card {
+      background-color: #fff;
       border: 1px solid #ddd;
-      padding: 0.8rem;
-      text-align: center;
+      border-radius: 8px;
+      padding: 1rem;
     }
 
-    th {
-      background-color: #f9f9f9;
-      font-weight: 600;
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    .bar-line {
+      display: flex;
+      align-items: center;
+      margin: 0.4rem 0;
+    }
+
+    .bar-label {
+      width: 80px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .bar-visual {
+      display: flex;
+      gap: 2px;
+      flex-grow: 1;
+      margin-left: 0.5rem;
+    }
+
+    .bar-unit {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .green { background-color: #27ae60; }
+    .red { background-color: #e74c3c; }
+    .empty { background-color: #eee; }
+
+    .bar-value {
+      font-size: 0.85rem;
+      margin-left: 0.6rem;
+      min-width: 50px;
+      color: #555;
     }
 
     .cta-link {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 2rem;
       color: #27ae60;
       font-weight: bold;
       text-decoration: none;
+      text-align: center;
+      width: 100%;
     }
 
     .cta-link:hover {
@@ -195,80 +199,91 @@
       L'objectif : montrer qu'on peut informer efficacement avec 10x moins de ressources.
     </p>
 
-    <div class="bar-section">
-      <div class="bar-title">⏱️ Temps de chargement moyen</div>
-      <div class="bar-container">
-        <div class="bar-helloasso"></div>
-        <div class="bar-idevent" style="position:absolute; left:0;"></div>
+    <div class="grid">
+      <!-- Temps de chargement -->
+      <div class="card">
+        <h3>⏱️ Temps de chargement</h3>
+        <div class="bar-line">
+          <div class="bar-label">IDEvent</div>
+          <div class="bar-visual">
+            <span class="bar-unit green"></span><span class="bar-unit green"></span><span class="bar-unit green"></span>
+            <span class="bar-unit empty"></span><span class="bar-unit empty"></span><span class="bar-unit empty"></span>
+          </div>
+          <div class="bar-value">0,6 s</div>
+        </div>
+        <div class="bar-line">
+          <div class="bar-label">HelloAsso</div>
+          <div class="bar-visual">
+            <span class="bar-unit red"></span><span class="bar-unit red"></span><span class="bar-unit red"></span>
+            <span class="bar-unit red"></span><span class="bar-unit red"></span><span class="bar-unit red"></span>
+          </div>
+          <div class="bar-value">2,8 s</div>
+        </div>
       </div>
-      <div class="bar-labels">
-        <span>IDEvent : 0,6 s</span>
-        <span>HelloAsso : 2,8 s</span>
+
+      <!-- Poids -->
+      <div class="card">
+        <h3>📦 Poids de la page</h3>
+        <div class="bar-line">
+          <div class="bar-label">IDEvent</div>
+          <div class="bar-visual">
+            <span class="bar-unit green"></span><span class="bar-unit green"></span>
+          </div>
+          <div class="bar-value">150 Ko</div>
+        </div>
+        <div class="bar-line">
+          <div class="bar-label">HelloAsso</div>
+          <div class="bar-visual">
+            <span class="bar-unit red"></span><span class="bar-unit red"></span>
+            <span class="bar-unit red"></span><span class="bar-unit red"></span>
+          </div>
+          <div class="bar-value">1,6 Mo</div>
+        </div>
+      </div>
+
+      <!-- Requêtes -->
+      <div class="card">
+        <h3>🌐 Requêtes HTTP</h3>
+        <div class="bar-line">
+          <div class="bar-label">IDEvent</div>
+          <div class="bar-visual"><span class="bar-unit green"></span></div>
+          <div class="bar-value">6</div>
+        </div>
+        <div class="bar-line">
+          <div class="bar-label">HelloAsso</div>
+          <div class="bar-visual">
+            <span class="bar-unit red"></span><span class="bar-unit red"></span>
+            <span class="bar-unit red"></span><span class="bar-unit red"></span>
+            <span class="bar-unit red"></span>
+          </div>
+          <div class="bar-value">92</div>
+        </div>
+      </div>
+
+      <!-- CO2 -->
+      <div class="card">
+        <h3>♻️ CO₂ / page vue</h3>
+        <div class="bar-line">
+          <div class="bar-label">IDEvent</div>
+          <div class="bar-visual"><span class="bar-unit green"></span></div>
+          <div class="bar-value">0,09 g</div>
+        </div>
+        <div class="bar-line">
+          <div class="bar-label">HelloAsso</div>
+          <div class="bar-visual">
+            <span class="bar-unit red"></span><span class="bar-unit red"></span><span class="bar-unit red"></span>
+          </div>
+          <div class="bar-value">1,1 g</div>
+        </div>
       </div>
     </div>
-
-    <div class="bar-section">
-      <div class="bar-title">📦 Poids total de la page</div>
-      <div class="bar-container">
-        <div class="bar-helloasso"></div>
-        <div class="bar-idevent" style="width: 9%; position:absolute; left:0;"></div>
-      </div>
-      <div class="bar-labels">
-        <span>IDEvent : 150 Ko</span>
-        <span>HelloAsso : 1,6 Mo</span>
-      </div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Critère</th>
-          <th>IDEvent (Low Web)</th>
-          <th>HelloAsso</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Temps de chargement</td>
-          <td>0,6 s</td>
-          <td>2,8 s</td>
-        </tr>
-        <tr>
-          <td>Poids de la page</td>
-          <td>150 Ko</td>
-          <td>1,6 Mo</td>
-        </tr>
-        <tr>
-          <td>Requêtes HTTP</td>
-          <td>6</td>
-          <td>92</td>
-        </tr>
-        <tr>
-          <td>CO₂ / page vue</td>
-          <td>0,09 g</td>
-          <td>1,1 g</td>
-        </tr>
-        <tr>
-          <td>Trackers externes</td>
-          <td>Aucun</td>
-          <td>7+</td>
-        </tr>
-        <tr>
-          <td>Score GTMetrix</td>
-          <td>98% (A)</td>
-          <td>72% (C)</td>
-        </tr>
-      </tbody>
-    </table>
 
     <p class="conclusion">
       Notre version low web ne cherche pas à concurrencer les grandes plateformes en fonctionnalités, mais démontre qu'une interface sobre
       peut suffire à informer efficacement, tout en réduisant son empreinte écologique de plus de 80%.
     </p>
 
-    <p style="text-align:center;">
-      <a class="cta-link" href="green-it-impact.html">➡️ Découvrir notre démarche</a>
-    </p>
+    <a class="cta-link" href="green-it-impact.html">➡️ Découvrir notre démarche</a>
   </main>
 
   <footer>

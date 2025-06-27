@@ -1,103 +1,239 @@
-
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Comparatif d’impact écologique entre deux versions d’un site web." name="description"/>
-<title>Comparatif Écologique - IDEvent</title>
-<link href="style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Comparaison Low Web vs site classique – efficacité, performance, sobriété."/>
+  <title>IDEvent – Comparatif</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .green-banner {
+      background-color: #eafaf1;
+      color: #145a32;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    header {
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #27ae60;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #27ae60;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro, .conclusion {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f9f9f9;
+      font-weight: 600;
+    }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #27ae60;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .cta-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<div class="container nav-container">
-<a class="logo-link" href="index.html">
-<div class="logo">
-<img alt="Logo IDEvent Globe" src="images/logo.ico"/>
-<span>IDEvent</span>
-</div>
-</a>
 
-<nav>
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-<li><a href="notre-vision.html">Notre vision</a></li>
-<li><a href="nos-engagements.html">Nos engagements</a></li>
-<li><a href="green-it-impact.html">Green IT</a></li>
-<li><a href="comparatif.html">Comparatif</a></li>
-<li><a href="test.html">Test</a></li>
-<li><a href="contact.html">Nous contacter</a></li>
-</ul>
-</nav>
+  <div class="green-banner">
+    🌿 Ce site illustre les bonnes pratiques du web sobre (Green IT / Low Web) — efficacité, éco-conception, accessibilité.
+  </div>
 
-</div>
-</header>
-<main>
-<section class="page-intro">
-<div class="container intro-grid">
-<div class="intro-text-content">
-<h2>Comparatif d’impact entre deux sites</h2>
-<p>Voici une vue synthétique des bénéfices environnementaux obtenus grâce à l’éco-conception de notre site IDEvent, comparé à un site équivalent non optimisé.</p>
-</div>
-<div class="intro-image-content">
-<img alt="Illustration comparatif écologique" loading="lazy" src="images/comparatif.png"/>
-</div>
-</div>
-</section>
-<section class="comparison-section">
-<div class="container comparison-grid">
-<div class="comparison-item">
-<h3>Poids moyen d’une page</h3>
-<p><strong>Site existant :</strong> 1,9 Mo</p>
-<p><strong>IDEvent :</strong> 350 Ko</p>
-</div>
-<div class="comparison-item">
-<h3>Nombre de requêtes HTTP</h3>
-<p><strong>Site existant :</strong> 60+</p>
-<p><strong>IDEvent :</strong> 10–15</p>
-</div>
-<div class="comparison-item">
-<h3>Score EcoIndex</h3>
-<p><strong>Site existant :</strong> D (45/100)</p>
-<p><strong>IDEvent :</strong> A (85/100)</p>
-</div>
-<div class="comparison-item">
-<h3>Émissions estimées CO₂/page</h3>
-<p><strong>Site existant :</strong> 1,75 g</p>
-<p><strong>IDEvent :</strong> 0,3 g</p>
-</div>
-<div class="comparison-item">
-<h3>Dépendances externes</h3>
-<p><strong>Site existant :</strong> Frameworks lourds, Google Fonts</p>
-<p><strong>IDEvent :</strong> Aucun, police système uniquement</p>
-</div>
-<div class="comparison-item">
-<h3>Temps de chargement (3G)</h3>
-<p><strong>Site existant :</strong> 6 à 9 sec</p>
-<p><strong>IDEvent :</strong> 1 à 2 sec</p>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer-bottom">
-<div class="container footer-container">
-<div class="footer-logo-info">
-<a class="logo-link" href="index.html">
-<div class="logo">
-<img alt="Logo IDEvent Globe" src="images/logo_big.webp"/>
-<span>IDEvent</span>
-</div>
-</a>
-<p>Tous les événements en Île-de-France, au même endroit.</p>
-</div>
-<div class="footer-contact-details">
-<p><img alt="Icône localisation" class="footer-icon" loading="lazy" src="images/localisation_logo.webp"/> 30 Avenue de la République, 94800 Villejuif</p>
-<p><img alt="Icône email" class="footer-icon" loading="lazy" src="images/mail_logo.webp"/> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
-<p><img alt="Icône téléphone" class="footer-icon" loading="lazy" src="images/phone_logo.webp"/> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
-</div>
-</div>
-</footer>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.ico" alt="Logo IDEvent" />
+        <span>IDEvent</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="site-vitrine.html">Site vitrine</a></li>
+          <li><a href="comparatif.html">Comparatif</a></li>
+          <li><a href="green-it-impact.html">Démarche</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Comparatif chiffré</h1>
+    <p class="intro">
+      Nous avons comparé notre page vitrine avec une page événementielle classique (HelloAsso – catégorie sport).
+      L'objectif : montrer qu'on peut informer efficacement avec 10x moins de ressources.
+    </p>
+
+    <svg viewBox="0 0 100 60" preserveAspectRatio="none">
+      <text x="0" y="10" font-size="5">⏱️ Chargement</text>
+      <rect x="0" y="15" width="30" height="6" fill="#27ae60" />
+      <rect x="0" y="24" width="80" height="6" fill="#ccc" />
+      <text x="32" y="20" font-size="4">0,6 s</text>
+      <text x="82" y="29" font-size="4">2,8 s</text>
+
+      <text x="0" y="40" font-size="5">📦 Poids</text>
+      <rect x="0" y="45" width="15" height="6" fill="#27ae60" />
+      <rect x="0" y="54" width="75" height="6" fill="#ccc" />
+      <text x="17" y="50" font-size="4">150 Ko</text>
+      <text x="77" y="59" font-size="4">1,6 Mo</text>
+    </svg>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Critère</th>
+          <th>IDEvent (Low Web)</th>
+          <th>HelloAsso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Temps de chargement</td>
+          <td>0,6 s</td>
+          <td>2,8 s</td>
+        </tr>
+        <tr>
+          <td>Poids de la page</td>
+          <td>150 Ko</td>
+          <td>1,6 Mo</td>
+        </tr>
+        <tr>
+          <td>Requêtes HTTP</td>
+          <td>6</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>CO₂ / page vue</td>
+          <td>0,09 g</td>
+          <td>1,1 g</td>
+        </tr>
+        <tr>
+          <td>Trackers externes</td>
+          <td>Aucun</td>
+          <td>7+</td>
+        </tr>
+        <tr>
+          <td>Score GTMetrix</td>
+          <td>98% (A)</td>
+          <td>72% (C)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="conclusion">
+      Notre version low web ne cherche pas à concurrencer les grandes plateformes en fonctionnalités, mais démontre qu'une interface sobre
+      peut suffire à informer efficacement, tout en réduisant son empreinte écologique de plus de 80%.
+    </p>
+
+    <p style="text-align:center;">
+      <a class="cta-link" href="green-it-impact.html">➡️ Découvrir notre démarche</a>
+    </p>
+  </main>
+
+  <footer>
+    Comparatif fictif basé sur des mesures réalisées avec GTMetrix, WebsiteCarbon et Ecograder.<br>
+    Les données seront remplacées après les tests finaux.
+  </footer>
+
 </body>
 </html>

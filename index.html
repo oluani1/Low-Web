@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Site démonstrateur Green IT et Low Web pour IDEvent."/>
+  <title>IDEvent – Accueil</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #2c3e50;
+    }
+
+    .green-banner {
+      background-color: #eafaf1;
+      color: #145a32;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    header.site-header {
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #27ae60;
+    }
+
+    .home-content {
+      text-align: center;
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .home-content h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .home-content h2 {
+      font-size: 1.5rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-green {
+      color: #27ae60;
+      font-weight: bold;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+
+    .button {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .button:hover {
+      background-color: #219150;
+    }
+
+    .button-secondary {
+      background-color: transparent;
+      color: #27ae60;
+      border-color: #27ae60;
+    }
+
+    .button-secondary:hover {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    footer.site-footer {
+      background-color: #f1f1f1;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-info,
+    .footer-contact-details {
+      flex: 1 1 300px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-icon {
+      width: 18px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+
+    @media(max-width: 600px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="green-banner">
+    🌿 Ce site illustre les bonnes pratiques du web sobre (Green IT / Low Web) — efficacité, éco-conception, accessibilité.
+  </div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.ico" alt="Logo IDEvent" />
+        <span>IDEvent</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="site-vitrine.html">Site vitrine</a></li>
+          <li><a href="comparatif.html">Comparatif</a></li>
+          <li><a href="green-it-impact.html">Démarche</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home-content">
+    <h1>Bienvenue sur IDEvent</h1>
+    <h2>Un projet démonstrateur de sobriété numérique</h2>
+    <p>Ce site a été conçu pour <span class="highlight-green">démontrer concrètement</span>
+      les bénéfices d’un développement web sobre et responsable. Nous comparons une version classique d’un site vitrine avec une version optimisée selon les principes du <strong>Low Web</strong> et du <strong>Green IT</strong>.
+    </p>
+    <a href="comparatif.html" class="button">Voir les résultats comparatifs</a>
+    <a href="green-it-impact.html" class="button-secondary">Notre démarche</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo-info">
+        <div class="logo">
+          <img src="images/logo.ico" alt="Logo IDEvent" />
+          <span>IDEvent</span>
+        </div>
+        <p>Tous les événements en Île-de-France, au même endroit.</p>
+        <p class="copyright">© IDEvent - 2025</p>
+      </div>
+      <div class="footer-contact-details">
+        <p><img src="images/localisation_logo.webp" alt="Localisation" class="footer-icon" loading="lazy" /> 30 Avenue de la République, 94800 Villejuif</p>
+        <p><img src="images/mail_logo.webp" alt="Email" class="footer-icon" loading="lazy" /> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
+        <p><img src="images/phone_logo.webp" alt="Téléphone" class="footer-icon" loading="lazy" /> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

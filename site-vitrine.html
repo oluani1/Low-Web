@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Exemple de site vitrine culturel éco-conçu"/>
+  <title>IDEvent – Site vitrine</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      color: #2c3e50;
+    }
+
+    .green-banner {
+      background-color: #eafaf1;
+      color: #145a32;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    header {
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #27ae60;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #27ae60;
+      margin: 2rem 1rem 0.5rem;
+      text-align: center;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .event-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .event-card h3 {
+      font-size: 1.1rem;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .event-card p {
+      margin: 0.2rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .event-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: #27ae60;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .event-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="green-banner">
+    🌿 Ce site illustre les bonnes pratiques du web sobre (Green IT / Low Web) — efficacité, éco-conception, accessibilité.
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.ico" alt="Logo IDEvent" />
+        <span>IDEvent</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="site-vitrine.html">Site vitrine</a></li>
+          <li><a href="comparatif.html">Comparatif</a></li>
+          <li><a href="green-it-impact.html">Démarche</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Événements à venir</h1>
+
+    <section class="event-grid">
+      <div class="event-card">
+        <img src="images/concert.webp" alt="Concert live">
+        <h3>Concert Plein Air</h3>
+        <p>25 juillet – Parc Floral</p>
+        <p>🎶 Musique</p>
+        <a href="#" class="event-link">En savoir plus</a>
+      </div>
+      <div class="event-card">
+        <img src="images/spectacle.webp" alt="Théâtre classique">
+        <h3>Soirée Théâtre</h3>
+        <p>30 juillet – Théâtre du Nord</p>
+        <p>🎭 Spectacle</p>
+        <a href="#" class="event-link">En savoir plus</a>
+      </div>
+      <div class="event-card">
+        <img src="images/exposition.webp" alt="Statue musée">
+        <h3>Exposition Sculptures</h3>
+        <p>Jusqu’au 15 août – Musée Rodin</p>
+        <p>🖼️ Exposition</p>
+        <a href="#" class="event-link">En savoir plus</a>
+      </div>
+      <div class="event-card">
+        <img src="images/salon.webp" alt="Salon étudiant">
+        <h3>Salon Étudiant</h3>
+        <p>7 septembre – Grande Halle</p>
+        <p>📚 Salon</p>
+        <a href="#" class="event-link">En savoir plus</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">Page optimisée selon les principes du Low Web. Images WebP, CSS intégré, aucune dépendance externe.</p>
+  </footer>
+
+</body>
+</html>

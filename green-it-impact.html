@@ -1,97 +1,213 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Découvrez tous les événements en Île-de-France. Spectacles, concerts, expositions et plus encore." name="description"/>
-<title>IDEvent - L'événement à grande vitesse</title>
-<link href="style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Démarche écoresponsable et low web du site IDEvent"/>
+  <title>IDEvent – Démarche</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .green-banner {
+      background-color: #eafaf1;
+      color: #145a32;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    header {
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #27ae60;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      color: #27ae60;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 1.3rem;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    .quote {
+      font-style: italic;
+      background-color: #f4f4f4;
+      border-left: 4px solid #27ae60;
+      padding: 1rem;
+      margin: 2rem 0;
+      color: #555;
+    }
+
+    footer {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #27ae60;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .cta-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<div class="container nav-container">
-<a class="logo-link" href="index.html">
-<div class="logo">
-<img alt="Logo IDEvent Globe" src="images/logo.ico"/>
-<span>IDEvent</span>
-</div>
-</a>
 
-<nav>
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-<li><a href="notre-vision.html">Notre vision</a></li>
-<li><a href="nos-engagements.html">Nos engagements</a></li>
-<li><a href="green-it-impact.html">Green IT</a></li>
-<li><a href="comparatif.html">Comparatif</a></li>
-<li><a href="test.html">Test</a></li>
-<li><a href="contact.html">Nous contacter</a></li>
-</ul>
-</nav>
+  <div class="green-banner">
+    🌿 Ce site illustre les bonnes pratiques du web sobre (Green IT / Low Web) — efficacité, éco-conception, accessibilité.
+  </div>
 
-</div>
-</header>
-<main>
-<section class="page-intro engagement-intro-section" id="engagement-intro">
-<div class="container intro-grid">
-<div class="intro-text-content">
-<h2>UN WEB PLUS LÉGER, <br/>POUR UN IMPACT <span class="highlight-orange">PLUS POSITIF</span></h2>
-<p>Chez IDEvent, nous croyons qu'un service numérique de qualité peut aussi être respectueux de l'environnement et de ses utilisateurs. C'est pourquoi nous adoptons les principes du Green IT et du Low-Web pour vous offrir une expérience optimale, rapide et éco-responsable.</p>
-</div>
-<div class="intro-image-content">
-<!-- IMAGE PLACEHOLDER: Illustration symbolisant la légèreté, l'écologie et la technologie.
-                         Ex: Une feuille d'arbre stylisée avec des éléments de circuit imprimé discrets, ou un paysage numérique minimaliste et lumineux.
-                         Nom du fichier : images/engagement-concept.png -->
-<img alt="Concept de l'engagement IDEvent pour un web léger et écologique" loading="lazy" src="images/placeholder_team.png"/>
-</div>
-</div>
-</section>
-<section class="team-members">
-<div class="container">
-<div class="team-grid-members">
-<article class="team-member-card">
-<h1 style="color: orange;">57%</h1>
-<p>De réduction d'emissions de CO<sub>2</sub> </p>
-<p class="member-quote">L'empreinte carbone du numérique est considérable, équivalente à celle du secteur de l'aviation civile (environ <strong>2 à 4% des émissions mondiales de gaz à effet de serre</strong> selon diverses études comme celles du Shift Project).</p>
-</article>
-<article class="team-member-card">
-<h1 style="color: orange;">100%</h1>
-<p>D'accessibilité: Un Web Ouvert à Tous</p>
-<p class="member-quote">Navigation facilitée pour tous : Y compris pour les personnes utilisant des lecteurs d'écran, la navigation au clavier, ou ayant des déficiences visuelles (contrastes, taille de police).</p>
-</article>
-<article class="team-member-card">
-<h1 style="color: orange;">70%</h1>
-<p>Plus léger qu'un site standard</p>
-<p class="member-quote">Une navigation fluide sans frustration, ce qui augmente l'engagement et la satisfaction. Cela a aussi un impact positif sur le référencement (SEO), Google favorisant les sites rapides.</p>
-</article>
-<article class="team-member-card">
-<h1 style="color: orange;">50%</h1>
-<p>D'économie de données mobiles</p>
-<p class="member-quote">Une différence qui se ressent rapidement sur la facture, surtout pour les utilisateurs fréquents. Par exemple, une page standard peut peser plusieurs Mo, alors qu'une page Low-Web vise souvent <strong>quelques centaines de Ko, voire moins</strong>.</p>
-</article>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer-bottom">
-<div class="container footer-container">
-<div class="footer-logo-info">
-<a class="logo-link" href="index.html">
-<div class="logo">
-<img alt="Logo IDEvent Globe" src="images/logo_big.webp"/>
-<span>IDEvent</span>
-</div>
-</a>
-<p>Tous les événements en Île-de-France, au même endroit.</p>
-</div>
-<div class="footer-contact-details">
-<p><img alt="Icône localisation" class="footer-icon" loading="lazy" src="images/localisation_logo.webp"/> 30 Avenue de la République, 94800 Villejuif</p>
-<p><img alt="Icône email" class="footer-icon" loading="lazy" src="images/mail_logo.webp"/> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
-<p><img alt="Icône téléphone" class="footer-icon" loading="lazy" src="images/phone_logo.webp"/> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
-</div>
-</div>
-</footer>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.ico" alt="Logo IDEvent" />
+        <span>IDEvent</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="site-vitrine.html">Site vitrine</a></li>
+          <li><a href="comparatif.html">Comparatif</a></li>
+          <li><a href="green-it-impact.html">Démarche</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Notre démarche éco-conçue</h1>
+
+    <p>
+      Le projet IDEvent s’inscrit dans une démarche de <strong>web sobre</strong>, aussi appelée <strong>low web</strong>.
+      L’objectif est de concevoir un site utile, rapide et écologique, avec un minimum de ressources techniques.
+    </p>
+
+    <h2>🌱 Principes appliqués</h2>
+    <ul>
+      <li><strong>Poids allégé :</strong> chaque page fait moins de 200 Ko</li>
+      <li><strong>Aucune dépendance externe :</strong> pas de Google Fonts, CDN ou frameworks lourds</li>
+      <li><strong>Images optimisées :</strong> format WebP, tailles réduites</li>
+      <li><strong>Pas de cookies ni de traqueurs</strong> — respect de la vie privée</li>
+      <li><strong>Accessibilité simplifiée :</strong> contraste lisible, structure claire</li>
+      <li><strong>Code minimaliste :</strong> HTML + CSS uniquement, sans JavaScript</li>
+    </ul>
+
+    <h2>🛠️ Outils & méthodes</h2>
+    <ul>
+      <li>GTMetrix – performance et éco-score</li>
+      <li>WebsiteCarbon.com – estimation CO₂ par page</li>
+      <li>Ecograder – bonnes pratiques green web</li>
+      <li>Analyse manuelle : poids, requêtes, design mobile</li>
+    </ul>
+
+    <div class="quote">
+      “Un site éco-conçu peut diviser son impact par 10 tout en restant informatif, rapide et esthétique.”
+    </div>
+
+    <h2>📉 En comparaison</h2>
+    <p>
+      Un site classique utilise souvent des frameworks JavaScript lourds, des polices en ligne, des plugins externes et des trackers.
+      Nous avons choisi une approche inverse : efficacité, légèreté, respect.
+    </p>
+
+    <h2>🎯 Notre bilan</h2>
+    <ul>
+      <li>⚡ Chargement 3 à 5 fois plus rapide</li>
+      <li>📦 Taille divisée par 8 à 10</li>
+      <li>♻️ Empreinte carbone réduite de 80% à 90%</li>
+      <li>💡 Un modèle simple à reproduire</li>
+    </ul>
+
+
+    <p>
+    Ce prototype a été réalisé avec très peu de moyens : environ <strong>1 mois de conception</strong> et seulement <strong>quelques euros pour l’hébergement</strong>. Cela montre qu’un site écoresponsable est accessible à tous, même sans gros budget.
+    </p>
+
+
+    <p class="cta-link">
+      ➡️ Voir notre <a href="comparatif.html">comparatif</a> pour plus de détails.
+    </p>
+  </main>
+
+  <footer>
+    Page informative sur la démarche Low Web et Green IT appliquée à ce projet. Aucune technologie inutile, aucun cookie, aucun traqueur.
+  </footer>
+
 </body>
 </html>

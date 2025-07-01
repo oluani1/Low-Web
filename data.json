@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Concert Plein Air",
+    "date": "25 juillet",
+    "location": "Parc Floral",
+    "category": "Musique",
+    "emoji": "🎶",
+    "image": "images/concert.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Soirée Théâtre",
+    "date": "30 juillet",
+    "location": "Théâtre du Nord",
+    "category": "Théâtre",
+    "emoji": "🎭",
+    "image": "images/spectacle.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Exposition Sculptures",
+    "date": "jusqu'au 15 août",
+    "location": "Musée Rodin",
+    "category": "Exposition",
+    "emoji": "🖼️",
+    "image": "images/exposition.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Salon Étudiant",
+    "date": "7 septembre",
+    "location": "Grande Halle",
+    "category": "Salon",
+    "emoji": "📚",
+    "image": "images/salon.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Festival Cinéma Vert",
+    "date": "12 août",
+    "location": "Cinéma Studio 28",
+    "category": "Cinéma",
+    "emoji": "🎬",
+    "image": "images/diversite_logo.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Rencontre Auteurs",
+    "date": "19 août",
+    "location": "Librairie des Champs",
+    "category": "Littérature",
+    "emoji": "📖",
+    "image": "images/smarthpone-user.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Marché Artisanal",
+    "date": "22 août",
+    "location": "Place des Arts",
+    "category": "Marché",
+    "emoji": "🛍️",
+    "image": "images/exposition-copie.webp",
+    "link": "evenement.html"
+  },
+  {
+    "title": "Conférence Climat",
+    "date": "3 septembre",
+    "location": "Hôtel de Ville",
+    "category": "Conférence",
+    "emoji": "🌍",
+    "image": "images/logo.ico",
+    "link": "evenement.html"
+  }
+]

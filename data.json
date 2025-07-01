@@ -1,146 +1,86 @@
 [
   {
-    "title": "Concert Plein Air",
-    "date": "25 juillet",
-    "location": "Paris",
+    "title": "Concert Rock",
     "category": "Musique",
-    "emoji": "🎶",
+    "description": "Un concert de rock incroyable en plein air.",
     "image": "images/concert.webp",
-    "link": "evenement.html"
+    "city": "Paris"
   },
   {
-    "title": "Soirée Théâtre",
-    "date": "30 juillet",
-    "location": "Lyon",
-    "category": "Théâtre",
-    "emoji": "🎭",
-    "image": "images/spectacle.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Exposition Sculptures",
-    "date": "jusqu’au 15 août",
-    "location": "Marseille",
-    "category": "Exposition",
-    "emoji": "🖼️",
-    "image": "images/exposition.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Salon Étudiant",
-    "date": "7 septembre",
-    "location": "Paris",
+    "title": "Salon du Livre",
     "category": "Salon",
-    "emoji": "📚",
+    "description": "Rencontrez vos auteurs préférés au parc des expos.",
     "image": "images/salon.webp",
-    "link": "evenement.html"
+    "city": "Créteil"
   },
   {
-    "title": "Festival Cinéma Vert",
-    "date": "12 août",
-    "location": "Toulouse",
-    "category": "Cinéma",
-    "emoji": "🎬",
-    "image": "images/cinema.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Rencontre Auteurs",
-    "date": "19 août",
-    "location": "Bordeaux",
-    "category": "Littérature",
-    "emoji": "📖",
-    "image": "images/livre.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Marché Artisanal",
-    "date": "22 août",
-    "location": "Lille",
-    "category": "Marché",
-    "emoji": "🛍️",
-    "image": "images/marche.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Conférence Climat",
-    "date": "3 septembre",
-    "location": "Paris",
-    "category": "Conférence",
-    "emoji": "🌍",
-    "image": "images/conference.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Atelier Yoga Urbain",
-    "date": "10 août",
-    "location": "Nantes",
-    "category": "Bien-être",
-    "emoji": "🧘‍♀️",
-    "image": "images/yoga.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Soirée Improvisation",
-    "date": "2 août",
-    "location": "Strasbourg",
+    "title": "Spectacle de Danse Contemporaine",
     "category": "Théâtre",
-    "emoji": "🎭",
-    "image": "images/impro.webp",
-    "link": "evenement.html"
+    "description": "Une performance artistique qui mêle grâce et énergie.",
+    "image": "images/spectacle.webp",
+    "city": "Nanterre"
   },
   {
-    "title": "Bal populaire",
-    "date": "14 juillet",
-    "location": "Nice",
-    "category": "Musique",
-    "emoji": "🎉",
-    "image": "images/bal.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Projection plein air",
-    "date": "6 août",
-    "location": "Lyon",
+    "title": "Projection : Cinéma indépendant",
     "category": "Cinéma",
-    "emoji": "📽️",
-    "image": "images/projection.webp",
-    "link": "evenement.html"
+    "description": "Un film primé au festival de Cannes, suivi d'un débat.",
+    "image": "images/cinema.webp",
+    "city": "Paris"
   },
   {
-    "title": "Forum emploi jeunes",
-    "date": "11 septembre",
-    "location": "Toulouse",
-    "category": "Salon",
-    "emoji": "💼",
-    "image": "images/forum.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Expo Street Art",
-    "date": "8 août",
-    "location": "Montpellier",
-    "category": "Exposition",
-    "emoji": "🎨",
-    "image": "images/streetart.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Conférence Intelligence Artificielle",
-    "date": "1er octobre",
-    "location": "Paris",
-    "category": "Conférence",
-    "emoji": "🤖",
-    "image": "images/ia.webp",
-    "link": "evenement.html"
-  },
-  {
-    "title": "Marche pour le Climat",
-    "date": "21 septembre",
-    "location": "Marseille",
+    "title": "Salon de l’Écologie Urbaine",
     "category": "Écologie",
-    "emoji": "🌱",
-    "image": "images/climat.webp",
-    "link": "evenement.html"
+    "description": "Découvrez les initiatives vertes de votre région.",
+    "image": "images/salon.webp",
+    "city": "Créteil"
+  },
+  {
+    "title": "Marché Bio de Quartier",
+    "category": "Marché",
+    "description": "Produits frais, locaux, bio et de saison.",
+    "image": "images/marche.webp",
+    "city": "Paris"
+  },
+  {
+    "title": "Concert Jazz & Vin chaud",
+    "category": "Musique",
+    "description": "Ambiance feutrée et douce au bord de la Seine.",
+    "image": "images/concert.webp",
+    "city": "Saint-Denis"
+  },
+  {
+    "title": "Festival du Court Métrage",
+    "category": "Cinéma",
+    "description": "Des pépites cinématographiques à découvrir.",
+    "image": "images/cinema.webp",
+    "city": "Saint-Denis"
+  },
+  {
+    "title": "Atelier d'Écriture Poétique",
+    "category": "Littérature",
+    "description": "Exprimez votre créativité littéraire !",
+    "image": "images/litterature.webp",
+    "city": "Montreuil"
+  },
+  {
+    "title": "Conférence : Villes intelligentes",
+    "category": "Conférence",
+    "description": "Les experts parlent de l’avenir des métropoles.",
+    "image": "images/conference.webp",
+    "city": "Paris"
+  },
+  {
+    "title": "Séance Yoga Bien-être",
+    "category": "Bien-être",
+    "description": "Relaxation profonde dans un cadre paisible.",
+    "image": "images/yoga.webp",
+    "city": "Nanterre"
+  },
+  {
+    "title": "Exposition Arts Numériques",
+    "category": "Exposition",
+    "description": "Plongez dans le monde de l’art interactif.",
+    "image": "images/exposition.webp",
+    "city": "Paris"
   }
 ]

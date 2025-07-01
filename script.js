@@ -1,118 +1,76 @@
-// script.js
-const eventGrid = document.getElementById("event-grid");
-const loadMoreBtn = document.getElementById("load-more");
-const filtersContainer = document.getElementById("category-filters");
-const searchInput = document.getElementById("searchBar");
-const citySelect = document.getElementById("citySelect");
-
 let allEvents = [];
 let displayedCount = 0;
-const itemsPerPage = 4;
-let currentCategory = "all";
+const limit = 10;
 
-// Charger les événements depuis le JSON
+const searchBar = document.getElementById("searchBar");
+// const citySelect = document.getElementById("citySelect"); // supprimé
+const categoryFilters = document.getElementById("category-filters");
+const eventGrid = document.getElementById("event-grid");
+const loadMoreBtn = document.getElementById("load-more");
+
 async function loadEvents() {
   try {
     const response = await fetch("data.json");
-    if (!response.ok) throw new Error("Erreur chargement JSON");
     allEvents = await response.json();
-    renderFilters();
+
+    generateCategoryFilters();
     renderEvents();
-  } catch (err) {
-    console.error("Erreur de chargement des événements :", err);
-    eventGrid.innerHTML = "<p>Impossible de charger les événements.</p>";
+  } catch (error) {
+    console.error("Erreur de chargement :", error);
   }
 }
 
-// Générer les filtres de catégories
-function renderFilters() {
-  const categories = [...new Set(allEvents.map(ev => ev.category))];
-  filtersContainer.innerHTML = "";
-
-  const allBtn = createFilterButton("Toutes", "all");
-  filtersContainer.appendChild(allBtn);
-
+function generateCategoryFilters() {
+  const categories = ["Toutes", ...new Set(allEvents.map(e => e.category))];
   categories.forEach(cat => {
-    const button = createFilterButton(cat, cat);
-    filtersContainer.appendChild(button);
+    const btn = document.createElement("button");
+    btn.textContent = cat;
+    btn.className = "filter-btn";
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderEvents(cat);
+    });
+    categoryFilters.appendChild(btn);
   });
+  categoryFilters.querySelector("button").classList.add("active");
 }
 
-function createFilterButton(label, category) {
-  const button = document.createElement("button");
-  button.textContent = label;
-  button.classList.add("filter-btn");
-  if (category === currentCategory) button.classList.add("active");
-
-  button.onclick = () => {
-    currentCategory = category;
-    displayedCount = 0;
-    eventGrid.innerHTML = "";
-    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-    renderEvents();
-  };
-
-  return button;
-}
-
-// Appliquer les filtres combinés
-function filterEvents() {
-  const searchText = searchInput.value.toLowerCase();
-  const selectedCity = citySelect.value.toLowerCase();
-
-  return allEvents.filter(ev => {
-    const matchCategory = currentCategory === "all" || ev.category.toLowerCase() === currentCategory.toLowerCase();
-    const matchText = ev.title.toLowerCase().includes(searchText);
-    const matchCity = !selectedCity || ev.location.toLowerCase().includes(selectedCity);
-    return matchCategory && matchText && matchCity;
+function renderEvents(filter = "Toutes") {
+  eventGrid.innerHTML = "";
+  displayedCount = 0;
+  const filtered = allEvents.filter(event => {
+    const matchSearch = searchBar.value.toLowerCase() === "" || event.title.toLowerCase().includes(searchBar.value.toLowerCase());
+    const matchCategory = filter === "Toutes" || event.category === filter;
+    return matchSearch && matchCategory;
   });
+
+  showMore(filtered);
+  loadMoreBtn.onclick = () => showMore(filtered);
 }
 
-// Affichage avec pagination
-function renderEvents() {
-  const filtered = filterEvents();
-  const slice = filtered.slice(displayedCount, displayedCount + itemsPerPage);
-
-  slice.forEach(ev => {
-    const card = createEventCard(ev);
+function showMore(filteredEvents) {
+  const next = filteredEvents.slice(displayedCount, displayedCount + limit);
+  next.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+    card.innerHTML = `
+      <img src="${event.image}" alt="${event.title}" loading="lazy">
+      <h3>${event.title}</h3>
+      <p>${event.description}</p>
+      <span class="category-tag">${event.category}</span>
+    `;
     eventGrid.appendChild(card);
   });
 
-  displayedCount += slice.length;
-  loadMoreBtn.style.display = displayedCount < filtered.length ? "inline-block" : "none";
+  displayedCount += next.length;
+  loadMoreBtn.style.display = displayedCount >= filteredEvents.length ? "none" : "block";
 }
 
-// Générer carte événement
-function createEventCard(event) {
-  const card = document.createElement("div");
-  card.className = "event-card";
-  card.innerHTML = `
-    <img src="${event.image}" alt="${event.title}">
-    <h3>${event.title}</h3>
-    <p>${event.date} – ${event.location}</p>
-    <p>${event.emoji} ${event.category}</p>
-    <a href="${event.link}" class="event-link">En savoir plus</a>
-  `;
-  return card;
-}
+// Event listeners
+searchBar.addEventListener("input", () => renderEvents(document.querySelector(".filter-btn.active")?.textContent || "Toutes"));
 
-// Réagir à la recherche texte
-searchInput.addEventListener("input", () => {
-  displayedCount = 0;
-  eventGrid.innerHTML = "";
-  renderEvents();
-});
+// Supprimé : citySelect.addEventListener(...)
 
-// Réagir au choix de ville
-citySelect.addEventListener("change", () => {
-  displayedCount = 0;
-  eventGrid.innerHTML = "";
-  renderEvents();
-});
-
-// Voir plus
-loadMoreBtn.addEventListener("click", renderEvents);
-
-// Démarrage
-document.addEventListener("DOMContentLoaded", loadEvents);
+// On load
+window.addEventListener("DOMContentLoaded", loadEvents);

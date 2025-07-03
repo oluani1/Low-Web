@@ -221,112 +221,204 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Qui sommes nous ? */
-
-.site-header nav ul li a.active {
-    color: var(--primary-blue);
-    font-weight: bold;
+body.about-page {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a; /* Bleu très foncé */
+  color: #e2e8f0;            /* Texte gris très clair */
+  line-height: 1.6;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.page-intro {
-    padding: 5em 0; 
-    background-color: var(--dark-bg);
-    overflow: hidden; 
+.about-title {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #99879c;
+  ; /* Glow violet */
 }
 
-.intro-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr; 
-    gap: 50px; 
-    align-items: center;
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.intro-text-content h2 {
-    font-size: clamp(2.4rem, 5vw, 3.2rem); 
-    color: var(--text-color);
-    margin-bottom: 0.6em;
-    line-height: 1.25;
-    font-weight: 700; 
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #707276;
 }
 
-.intro-text-content h2 .highlight-orange {
-    background-color: var(--accent-orange);
-    color: #181818; 
-    padding: 0.05em 0.2em; 
-    border-radius: 4px;
-    display: inline; 
-    box-decoration-break: clone; 
-    -webkit-box-decoration-break: clone; 
+.about-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
-.intro-text-content p {
-    font-size: 1.05rem; 
-    color: var(--text-light-gray);
-    max-width: 580px;
-    line-height: 1.7; 
+.about-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 1em;
 }
 
-.intro-image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; 
+.about-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #22c55e; /* Vert éco-responsable */
+  font-weight: bold;
 }
 
 /* Section des membres de l'équipe */
 .team-members {
-    padding: 4em 0 5em; 
-    background-color: #252525;
-}
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #222;
+      color: #fff;
+      text-align: center;
+    }
 
-.team-grid-members {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 20px; /* Ajuster le gap si nécessaire */
-}
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px 20px;
+    }
 
-.team-member-card {
-    background-color: var(--card-bg);
-    padding: 25px 20px; 
-    border-radius: 10px; 
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35); 
-    display: flex;
-    flex-direction: column;
-}
+    .photo-gallery img {
+      width: 250px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
 
-.team-member-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 20px auto; 
-    border: 4px solid var(--primary-blue); 
-}
+    .values-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px auto 80px;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
 
-.team-member-card h4 {
-    font-size: 1.25rem; 
-    color: var(--text-color);
-    margin-bottom: 0.4em;
-    font-weight: 600;
-}
+    .value-block {
+      max-width: 280px;
+      text-align: left;
+    }
 
-.team-member-card .member-role {
-    font-size: 0.85rem; 
-    color: var(--primary-blue);
-    font-weight: 500;
-    margin-bottom: 1em;
-    min-height: 2.5em; 
-    text-transform: uppercase; 
-    letter-spacing: 0.5px;
-}
+    .value-icon {
+      background: #553c9f;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      margin-bottom: 15px;
+      
+    }
 
-.team-member-card .member-quote {
-    font-size: 0.9rem;
-    color: var(--text-light-gray);
-    line-height: 1.6;
-    flex-grow: 1;
-    margin-bottom: 0; 
-}
+    .value-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
 
+    .value-desc {
+      margin-left: calc(1.5em + 10px); /* Aligns perfectly under title, offsetting icon + gap */
+  margin-top: 8px;
+  font-size: 1em;
+  color: #ffffff;
+    }
+    .value-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espace entre l'icône et le titre */
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* valeur site */
+body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #222;
+      color: #3c3744;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+
+    .valeurs-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 50px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .valeur-box {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      width: 280px;
+      padding: 30px 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .valeur-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .valeur-box.valeur-humaine {
+      background: linear-gradient(135deg, #1670ef, #224df7);
+      color: white;
+    }
+
+    .valeur-icone {
+      background: #224df7;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+    }
+
+    .valeur-humaine .valeur-icone {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .valeur-titre {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .valeur-description {
+      font-size: 0.95em;
+      line-height: 1.6em;
+    }
 /* Footer 2 */
 .footer-logo-info .copyright {
     font-size: 0.85rem;

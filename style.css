@@ -394,7 +394,26 @@ img { max-width: 100%; height: auto; display: block; }
       .intro-text-content h2 {
         font-size: 2em;
       }
-    
+    .fade-text {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-2 {
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 .pillars-grid {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;

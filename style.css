@@ -62,31 +62,64 @@ img { max-width: 100%; height: auto; display: block; }
 
 
 .hero {
-    background-image: url('images/main_image.webp'); 
+    position: relative;
+    background-image: url('images/main_image.webp');
     background-size: cover;
     background-position: center;
     height: 70vh;
     min-height: 400px;
     display: flex;
-    align-items: center; 
-    padding-left: 7%; /* à ajuster */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-text {
     position: relative;
+    z-index: 2;
+    color: #b4d5fa;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
 }
 
-.hero-content {
-    background-color: rgba(45, 45, 45, 0.85); 
-    padding: 2em; 
-    border-radius: 8px; 
-    max-width: 380px; /* Ajuster cette largeur pour que le rectangle tienne bien sur la bande bleue de l'image de fond */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
-}
-
-.hero-content h1 {
-    color: var(--primary-blue); 
+.hero-title {
     text-transform: uppercase;
-    font-size: clamp(2rem, 5vw, 2.8rem); 
+    font-size: clamp(2rem, 5vw, 2.8rem);
     line-height: 1.2;
+    margin-bottom: 0.5em;
 }
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #b4d5fa;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* Section Texte */
 .intro-text { padding: 3em 0; text-align: center; }
@@ -429,6 +462,149 @@ img { max-width: 100%; height: auto; display: block; }
 .testimonial-quote p {
     margin-bottom: 0;
 }
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #ff8c00; /* orange vif, ou adapte à ton thème */
+}
+
+/* Section Contact */
+
+.contact {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0f2c, #1a0538);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .contact-container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(135, 0, 255, 0.3);
+    }
+
+    .contact-container h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-container p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #ccc;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .contact-form span {
+      color: #f55;
+    }
+
+    .contact-form small {
+      float: right;
+      color: #aaa;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #1b1b2f;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #888;
+    }
+
+    .captcha-placeholder {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      background: #2a2a40;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .captcha-placeholder label {
+      margin-left: 0.5rem;
+    }
+
+    .captcha-note {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-left: auto;
+    }
+
+    .contact-form button {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #a04bff, #d86eff);
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: linear-gradient(90deg, #8e3dfc, #c057ff);
+    }
 
 /* Section Nos Engagements */
 

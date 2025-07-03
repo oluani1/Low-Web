@@ -3,10 +3,38 @@ let displayedCount = 0;
 const limit = 10;
 
 const searchBar = document.getElementById("searchBar");
-// const citySelect = document.getElementById("citySelect"); // supprimé
 const categoryFilters = document.getElementById("category-filters");
 const eventGrid = document.getElementById("event-grid");
 const loadMoreBtn = document.getElementById("load-more");
+
+document.addEventListener("DOMContentLoaded", () => {
+  // --------- Carrousel ----------
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => s.classList.toggle("active", i === index));
+    dots.forEach((d, i) => d.classList.toggle("active", i === index));
+    current = index;
+  }
+
+  // Dots click
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      showSlide(Number(dot.dataset.index));
+    });
+  });
+
+  // Auto-slide
+  setInterval(() => {
+    let next = (current + 1) % slides.length;
+    showSlide(next);
+  }, 5000);
+
+  // --------- Chargement des événements ----------
+  loadEvents();
+});
 
 async function loadEvents() {
   try {
@@ -67,10 +95,8 @@ function showMore(filteredEvents) {
   loadMoreBtn.style.display = displayedCount >= filteredEvents.length ? "none" : "block";
 }
 
-// Event listeners
-searchBar.addEventListener("input", () => renderEvents(document.querySelector(".filter-btn.active")?.textContent || "Toutes"));
-
-// Supprimé : citySelect.addEventListener(...)
-
-// On load
-window.addEventListener("DOMContentLoaded", loadEvents);
+// Recherche dynamique
+searchBar.addEventListener("input", () => {
+  const currentCategory = document.querySelector(".filter-btn.active")?.textContent || "Toutes";
+  renderEvents(currentCategory);
+});

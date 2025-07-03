@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Découvrez les engagements d'IDEvent pour un web plus rapide, écologique et accessible grâce aux principes du Green IT et du Low-Web." name="description"/>
+<title>IDEvent - Nos Engagements : Green IT &amp; Low-Web</title>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="container nav-container">
+<a class="logo-link" href="index.html">
+<div class="logo">
+<img alt="Logo IDEvent Globe" src="images/logo.ico"/>
+<span>IDEvent</span>
+</div>
+</a>
+
+<nav>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+<li><a href="notre-vision.html">Notre vision</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+</nav>
+
+</div>
+</header>
+<main>
+<section class="contact">
+  <div class="contact-container">
+  <h1>Contacter l'équipe</h1>
+  <p>N'hésitez pas à nous écrire via ce formulaire pour toute question ou proposition de collaboration.</p>
+
+  <form class="contact-form" action="#" method="post">
+    <label for="category">Quelle catégorie décrit le mieux votre demande ? <span>*</span></label>
+    <select id="category" name="category" required>
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="issue">Problème / Question</option>
+      <option value="collaboration">Collaboration</option>
+      <option value="feedback">Retour d’expérience</option>
+    </select>
+
+    <label for="name">Nom complet <span>*</span></label>
+    <input type="text" id="name" name="name" placeholder="ex. : Jade Dupont" required />
+
+    <label for="email">Adresse e-mail de réponse <span>*</span></label>
+    <input type="email" id="email" name="email" placeholder="ex. : jade.dupont@gmail.com" required />
+
+    <label for="message">Votre message <span>*</span> <small id="charCount">0 sur 500</small></label>
+    <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Bonjour..." required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
+
+  <script>
+    // Remplace ceci par ta vraie clé publique
+    emailjs.init("RjLDGQ6W1P2IQAAe7");
+
+    const form = document.getElementById('contact-form');
+    const message = document.getElementById("message");
+    const count = document.getElementById("charCount");
+
+    message.addEventListener("input", () => {
+      count.textContent = `${message.value.length} of 500`;
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_uf4r6qg', 'template_drnqpar', this)
+        .then(() => {
+          alert("✅ Message envoyé avec succès !");
+          form.reset();
+          count.textContent = "0 of 500";
+        })
+        .catch((error) => {
+          alert("❌ Une erreur s'est produite : " + JSON.stringify(error));
+        });
+    });
+    
+  </script>
+</section>
+
+</main>
+<footer class="site-footer-bottom">
+<div class="container footer-container">
+<div class="footer-logo-info">
+<a class="logo-link" href="index.html">
+<div class="logo">
+<img alt="Logo IDEvent Globe" src="images/logo_big.webp"/>
+<span>IDEvent</span>
+</div>
+</a>
+<p>Tous les événements en Île-de-France, au même endroit.</p>
+<p class="copyright">© IDEvent - 2025</p>
+</div>
+<div class="footer-contact-details">
+<p><img alt="Icône localisation" class="footer-icon" loading="lazy" src="images/localisation_logo.webp"/> 30 Avenue de la République, 94800 Villejuif</p>
+<p><img alt="Icône email" class="footer-icon" loading="lazy" src="images/mail_logo.webp"/> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
+<p><img alt="Icône téléphone" class="footer-icon" loading="lazy" src="images/phone_logo.webp"/> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
+</div>
+</div>
+</footer>
+</body>
+</html>

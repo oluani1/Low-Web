@@ -115,14 +115,23 @@
       <button onclick="downloadPDF()" class="btn-submit" style="margin-top: 2rem;">📄 Télécharger le rapport PDF</button>
     </div>
 
-    <section style="margin-top: 4rem;">
-      <h2>Comparer un site</h2>
-      <form id="compareForm">
-        <input type="url" name="url" placeholder="https://example.com" required style="padding: 10px; width: 70%; max-width: 400px;">
-        <button type="submit" class="btn-submit">Comparer avec IDEvent</button>
-      </form>
-      <div id="compareResult" style="margin-top: 2rem;"></div>
-    </section>
+      <section style="margin-top: 4rem;">
+        <h2>Comparer un site</h2>
+        <form id="compareForm">
+          <input type="url" name="url" id="compareUrl" placeholder="https://example.com" required style="padding: 10px; width: 70%; max-width: 400px;">
+          <button type="submit" class="btn-submit">Comparer avec IDEvent</button>
+        </form>
+        <div id="compareResult" style="margin-top: 2rem;"></div>
+      </section>
+
+      <section id="latestEcoindex" style="margin-top: 4rem;">
+        <h2>📝 Dernières analyses EcoIndex</h2>
+        <div id="ecoindexList" style="margin-top: 1rem;">
+          <p>Chargement des données...</p>
+        </div>
+      </section>
+
+
   </main>
 
   <footer class="site-footer-bottom" style="margin-top: 5rem; text-align: center; padding: 2rem 0; background: #111;">
@@ -198,31 +207,48 @@
       html2pdf().from(section).save("rapport-ecoindex.pdf");
     }
 
-    document.getElementById("compareForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const url = this.url.value;
-      const resultDiv = document.getElementById("compareResult");
-      resultDiv.textContent = "Chargement...";
+document.getElementById("compareForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-      try {
-        const res = await fetch(`https://api.ecoindex.fr/ecoindex?url=${encodeURIComponent(url)}`);
-        if (!res.ok) throw new Error("Site non analysable");
-        const data = await res.json();
+  const urlToTest = document.getElementById("compareUrl").value.trim();
+  const resultDiv = document.getElementById("compareResult");
+  resultDiv.innerHTML = "<p>Chargement via RapidAPI...</p>";
 
-        resultDiv.innerHTML = `
-          <h3>Résultat pour ${url}</h3>
-          <ul>
-            <li>EcoIndex : ${data.ecoindex}</li>
-            <li>CO₂ : ${data.ghg} g</li>
-            <li>Eau : ${data.water} cl</li>
-            <li>Taille : ${data.size} Ko</li>
-            <li>Requêtes : ${data.requests}</li>
-          </ul>
-        `;
-      } catch (err) {
-        resultDiv.innerHTML = `<p style="color: red;">Erreur : ${err.message}</p>`;
-      }
-    });
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '18d4b1c8ebmshd817320ddd1e816p16a487jsnfb9e6265b085',
+      'X-RapidAPI-Host': 'ecoindex.p.rapidapi.com'
+    }
+  };
+
+  try {
+    const apiUrl = `https://ecoindex.p.rapidapi.com/v1/ecoindexes/analyze?url=${encodeURIComponent(urlToTest)}`;
+    const response = await fetch(apiUrl, options);
+    if (!response.ok) throw new Error("Échec de l'analyse via RapidAPI");
+
+    const data = await response.json();
+
+    resultDiv.innerHTML = `
+      <h3>Résultat pour <span style="color:#4A70F8;">${urlToTest}</span></h3>
+      <ul style="line-height: 1.6;">
+        <li><strong>EcoIndex :</strong> ${data.ecoIndex}</li>
+        <li><strong>Grade :</strong> ${data.grade}</li>
+        <li><strong>CO₂ :</strong> ${data.greenhouseGasEmission} g</li>
+        <li><strong>Eau :</strong> ${data.waterConsumption} cl</li>
+        <li><strong>Taille :</strong> ${(data.bytes / 1024).toFixed(1)} Ko</li>
+        <li><strong>Requêtes :</strong> ${data.requests}</li>
+      </ul>
+    `;
+  } catch (err) {
+    resultDiv.innerHTML = `<p style="color:red;">Erreur RapidAPI : ${err.message}</p>`;
+  }
+});
+
+
+
+
+
   </script>
 </body>
 </html>

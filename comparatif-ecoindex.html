@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparatif EcoIndex – IDEvent vs HelloAsso</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body { background: #121212; color: white; font-family: sans-serif; }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .chart-box {
+      background: #1f1f1f;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    canvas {
+      max-width: 100%;
+      height: 200px !important;
+    }
+
+    .btn-submit {
+      padding: 10px 20px;
+      background: #4A70F8;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .btn-submit:hover {
+      background: #3a5edb;
+    }
+    input[type="url"] {
+      border-radius: 6px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link"> 
+        <div class="logo">
+          <img src="images/logo.ico" alt="Logo IDEvent Globe">
+          <span>IDEvent</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="notre-vision.html">Notre vision</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+          <li><a href="comparatif-ecoindex.html">Comparatif EcoIndex</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chart-section container" id="rapport">
+    <h1>Comparatif Éco-Conception</h1>
+    <p>Comparaison entre <strong>IDEvent</strong> et <strong>HelloAsso</strong> sur des indicateurs environnementaux.<br>
+      <a href="https://ecoindex.fr" target="_blank" style="color: #4A70F8;">Voir les détails sur EcoIndex.fr</a>
+    </p>
+
+  <h2 style="margin-top: 3rem;">Visualisation comparative</h2>
+
+  <div class="chart-grid">
+    <div class="chart-box">
+      <canvas id="chartEcoIndex"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartCO2"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartWater"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartSize"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartRequests"></canvas>
+    </div>
+  </div>
+
+
+    <div style="margin-top: 3rem;">
+      <h2>Tableau comparatif</h2>
+      <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead style="background-color: #333; color: #fff;">
+          <tr>
+            <th style="padding: 10px; border: 1px solid #444;">Indicateur</th>
+            <th style="padding: 10px; border: 1px solid #444;">IDEvent</th>
+            <th style="padding: 10px; border: 1px solid #444;">HelloAsso</th>
+          </tr>
+        </thead>
+        <tbody style="background-color: #2d2d2d; color: #e0e0e0;">
+          <tr><td style="padding: 10px; border: 1px solid #444;">EcoIndex</td><td>85</td><td>49</td></tr>
+          <tr><td style="padding: 10px; border: 1px solid #444;">CO₂ (g)</td><td>0.3</td><td>1.62</td></tr>
+          <tr><td style="padding: 10px; border: 1px solid #444;">Eau (cl)</td><td>1.2</td><td>2.9</td></tr>
+          <tr><td style="padding: 10px; border: 1px solid #444;">Taille (Ko)</td><td>350</td><td>1800</td></tr>
+          <tr><td style="padding: 10px; border: 1px solid #444;">Requêtes</td><td>12</td><td>60</td></tr>
+        </tbody>
+      </table>
+
+      <button onclick="downloadPDF()" class="btn-submit" style="margin-top: 2rem;">📄 Télécharger le rapport PDF</button>
+    </div>
+
+    <section style="margin-top: 4rem;">
+      <h2>Comparer un site</h2>
+      <form id="compareForm">
+        <input type="url" name="url" placeholder="https://example.com" required style="padding: 10px; width: 70%; max-width: 400px;">
+        <button type="submit" class="btn-submit">Comparer avec IDEvent</button>
+      </form>
+      <div id="compareResult" style="margin-top: 2rem;"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer-bottom" style="margin-top: 5rem; text-align: center; padding: 2rem 0; background: #111;">
+    <p>© 2025 IDEvent – Tous droits réservés.</p>
+  </footer>
+
+  <script>
+
+  const comparatifData = {
+    IDEvent: { ecoIndex: 85, ges: 0.3, water: 1.2, size: 350, requests: 12 },
+    HelloAsso: { ecoIndex: 49, ges: 1.62, water: 2.9, size: 1800, requests: 60 }
+  };
+
+  const labels = ["IDEvent", "HelloAsso"];
+
+  function createChart(id, label, values, color, yLabel) {
+    new Chart(document.getElementById(id), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: label,
+          data: values,
+          backgroundColor: color,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: label,
+            color: '#fff',
+            font: { size: 14 }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: '#fff', font: { size: 10 } },
+            title: {
+              display: true,
+              text: yLabel,
+              color: '#fff',
+              font: { size: 12 }
+            },
+            grid: { color: '#333' }
+          },
+          x: {
+            ticks: { color: '#fff', font: { size: 10 } },
+            grid: { color: '#333' }
+          }
+        }
+      }
+    });
+  }
+
+  // Création des graphiques
+  createChart("chartEcoIndex", "EcoIndex", [85, 49], "#4A70F8", "Score");
+  createChart("chartCO2", "CO₂ (g)", [0.3, 1.62], "#E91E63", "g");
+  createChart("chartWater", "Eau (cl)", [1.2, 2.9], "#00BCD4", "cl");
+  createChart("chartSize", "Taille (Ko)", [350, 1800], "#FFC107", "Ko");
+  createChart("chartRequests", "Requêtes", [12, 60], "#FF5722", "Nombre");
+
+
+
+
+    function downloadPDF() {
+      const section = document.getElementById("rapport");
+      html2pdf().from(section).save("rapport-ecoindex.pdf");
+    }
+
+    document.getElementById("compareForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const url = this.url.value;
+      const resultDiv = document.getElementById("compareResult");
+      resultDiv.textContent = "Chargement...";
+
+      try {
+        const res = await fetch(`https://api.ecoindex.fr/ecoindex?url=${encodeURIComponent(url)}`);
+        if (!res.ok) throw new Error("Site non analysable");
+        const data = await res.json();
+
+        resultDiv.innerHTML = `
+          <h3>Résultat pour ${url}</h3>
+          <ul>
+            <li>EcoIndex : ${data.ecoindex}</li>
+            <li>CO₂ : ${data.ghg} g</li>
+            <li>Eau : ${data.water} cl</li>
+            <li>Taille : ${data.size} Ko</li>
+            <li>Requêtes : ${data.requests}</li>
+          </ul>
+        `;
+      } catch (err) {
+        resultDiv.innerHTML = `<p style="color: red;">Erreur : ${err.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

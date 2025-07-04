@@ -3,93 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez tous les événements en Île-de-France. Spectacles, concerts, expositions et plus encore.">
-    <title>IDEvent - L'événement à grande vitesse</title>
+    <meta name="description" content="Découvrez tous les événements et la vision IDEvent pour un web plus responsable.">
+    <title>IDEvent - Événements et Vision</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+        }
+
+        .site-header {
+            background-color: #1c1c2b;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1rem;
+        }
+
+        .nav-container nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-container nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom right, #4a90e2, #2c3e50);
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .intro-text {
+            background-color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .intro-text h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .explore-events {
+            background-color: #f2f2f2;
+            padding: 3rem 1rem;
+        }
+
+        .explore-events h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #222;
+        }
+
+        .event-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-card h3 {
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .event-card p {
+            padding: 0 1rem 1rem;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .btn-more {
+            display: block;
+            margin: 0 1rem 1.5rem;
+            text-align: center;
+            background-color: #4a90e2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-more:hover {
+            background-color: #357ab8;
+        }
+
+        .site-footer-bottom {
+            background-color: #1c1c2b;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-logo-info, .footer-contact-details {
+            flex: 1 1 300px;
+            margin: 1rem 0;
+        }
+
+        .footer-icon {
+            width: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        a {
+            color: #4a90e2;
+        }
+    </style>
 </head>
 <body>
-
     <header class="site-header">
         <div class="container nav-container">
             <a href="index.html" class="logo-link"> 
-            <div class="logo">
-                <img src="images/logo.ico" alt="Logo IDEvent Globe">
-                <span>IDEvent</span>
-            </div>
+                <div class="logo">
+                    <img src="images/logo.ico" alt="Logo IDEvent Globe">
+                    <span>IDEvent</span>
+                </div>
             </a>
             <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="notre-vision.html">Notre vision</a></li>
-                <li><a href="qui-sommes-nous.html">Qui sommes nous ?</a></li>
-                <li><a href="comparatif-ecoindex.html">Comparatif EcoIndex</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="comparatif-ecoindex.html">Comparatif EcoIndex</a></li>
+                    <li><a href="notre-vision.html">Notre vision</a></li>
+                    <li><a href="qui-sommes-nous.html">Qui sommes nous ?</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-
     <main>
-<section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-text">
-        <h1 class="hero-title">L'événement à grande vitesse</h1>
-        <h3 class="hero-subtitle">
-            Réinventons ensemble l’événementiel pour qu’il soit aussi vibrant qu’écoresponsable, sans jamais sacrifier l’expérience ni la planète.
-        </h3>
-    </div>
-</section>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>L'événement à grande vitesse</h1>
+            </div>
+        </section>
+
         <section class="intro-text">
             <div class="container">
-                <h2>Êtes-vous aussi en recherche d'activités ce <span class="highlight">week-end</span> ?</h2>
-                <p>Chez IDEvent, nous sommes convaincus que la culture, le lien social et l'accès à l'information sont les piliers d'une société vivante et inclusive. Nous rassemblons donc en un seul espace l'ensemble des événements d'Île-de-France afin de faciliter votre découverte et encourager votre curiosité et renforcer le tissu local, et ce qu'il soit artistique, associatif ou citoyen. Nous mettons en lumière la richesse et la diversité de la région, tout en valorisant les initiatives écoresponsables, accessibles et participatives. C'est ainsi grâce à nos organisateurs engagés que nous pouvons imaginer aujourd'hui un territoire plus connecté, plus vibrant, et à la portée de tous.</p>
+                <h2>Notre vision</h2>
+                <p>Notre vision est de connecter chacun à la richesse culturelle et événementielle de l’Île-de-France, tout en réduisant notre empreinte carbone grâce à un site éco-conçu. Moins d'énergie, plus d'impact positif.</p>
             </div>
         </section>
 
         <section class="explore-events" id="publication">
-  <div class="container">
-    <h2 class="section-title">Explorez</h2>
-
-    <div class="search-bar">
-      <input type="text" id="searchBar" placeholder="Rechercher un événement...">
-      
-    </div>
-
-    <section id="evenements">
-      <h2>🎉 Événements à venir</h2>
-      <div id="category-filters" class="filters"></div>
-      <div id="event-grid" class="event-grid"></div>
-      <div class="load-more-container">
-        <button id="load-more">Voir plus</button>
-      </div>
-    </section>
-  </div>
-</section>
-
-
-
-        <section class="contact-form-section" id="contact">
             <div class="container">
-                <h2>Abonnez vous pour recevoir chaque semaine l'évènement et de spectacle directement dans votre boite mail ou message.</h2>
-                <form action="#" method="POST">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="nom_prenom">Votre nom et prénom...*</label>
-                            <input type="text" id="nom_prenom" name="nom_prenom" required>
-                        </div>
-                
-                        <div class="form-group">
-                            <label for="telephone">Votre numéro de téléphone...*</label>
-                            <input type="tel" id="telephone" name="telephone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Votre messagerie électro...*</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn-submit">Envoyer</button>
-                </form>
+                <h2>Explorez</h2>
+                <div class="event-cards-container">
+                    <article class="event-card">
+                        <img src="images/spectacle.webp" alt="Un théâtre avec une scène éclairée pour Spectacles" loading="lazy">
+                        <h3>Spectacle</h3>
+                        <p>Un catalogue riche où théâtres, opéras, danses, concerts classiques et festivals divers vous attendent.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                    <article class="event-card">
+                        <img src="images/concert.webp" alt="Un groupe de musique sur scène devant une foule pour Concerts" loading="lazy">
+                        <h3>Concert</h3>
+                        <p>Du rock au rap, de l'électro au jazz, des musiques du monde à la pop, et le tout en salles ou plein air.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                    <article class="event-card">
+                        <img src="images/exposition.webp" alt="Une statue d'ange dans un musée pour Expositions" loading="lazy">
+                        <h3>Exposition</h3>
+                        <p>Retrouvez l'ensemble des expositions temporaires ou permanentes, des grands musées au galeries indépendantes.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                    <article class="event-card">
+                        <img src="images/salon.webp" alt="Un grand hall avec des stands pour Salons et Marchés" loading="lazy">
+                        <h3>Salon & Marché</h3>
+                        <p>Marché de créateurs, brocantes et vide-greniers à gogo; des salons professionnels ou encore grand public.</p>
+                        <a href="#" class="btn-more">Voir plus</a>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
@@ -106,13 +250,11 @@
                 <p>Tous les événements en Île-de-France, au même endroit.</p>
             </div>
             <div class="footer-contact-details">
-                <p><img src="images/localisation_logo.webp" alt="Icône localisation" class="footer-icon" loading="lazy"> 30 Avenue de la République, 94800 Villejuif</p>
-                <p><img src="images/mail_logo.webp" alt="Icône email" class="footer-icon" loading="lazy"> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
-                <p><img src="images/phone_logo.webp" alt="Icône téléphone" class="footer-icon" loading="lazy"> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
+                <p><img src="images/localisation_logo.webp" alt="Localisation" class="footer-icon"> 30 Avenue de la République, 94800 Villejuif</p>
+                <p><img src="images/mail_logo.webp" alt="Email" class="footer-icon"> <a href="mailto:business@idevent.com">business@idevent.com</a></p>
+                <p><img src="images/phone_logo.webp" alt="Téléphone" class="footer-icon"> <a href="tel:+33123456789">+33 01 23 45 67 89</a></p>
             </div>
         </div>
     </footer>
-<script src="script.js"></script>
-
 </body>
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Détails de l'Événement</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <img src="images/logo.ico" alt="Logo IDEvent Globe" />
+          <span>IDEvent</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <main class="event-detail">
+    <div id="event-container" class="container event-content">
+      <p>Chargement...</p>
+    </div>
+  </main>
+
+  <script>
+    // Importation directe des événements dans un tableau local
+    const allEvents = [
+      {
+        "title": "Soirée de louange",
+        "image": "images/louange.webp",
+        "date": "Samedi 12 juillet 2025 – 19h00 à 20h00",
+        "description": "Venez assister à une heure d'adoration profonde. Votre voix n’a pas d’importance, seul votre cœur compte.",
+        "city": "Potters House Paris — 23 Rue des Messageries, 75010 Paris",
+        "details": "C’est l’heure de célébrer ! Rejoignez-nous pour une Soirée de louange inoubliable à Potters House Paris..."
+      },
+      {
+        "title": "Concert Rock",
+        "image": "images/concert.webp",
+        "date": "Vendredi 18 juillet 2025 – 20h00",
+        "description": "Un concert de rock incroyable en plein air.",
+        "city": "Paris",
+        "details": "Préparez-vous à vibrer au son de la guitare électrique..."
+      }
+      // Ajoute ici les autres événements du tableau
+    ];
+
+    function loadEventDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const title = decodeURIComponent(params.get("title"));
+      const container = document.getElementById("event-container");
+
+      const event = allEvents.find(e => e.title === title);
+
+      if (!event) {
+        container.innerHTML = "<p>Événement introuvable.</p>";
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="banner">
+          <img src="${event.image}" alt="${event.title}">
+          <div class="banner-text">
+            <p class="event-date">📅 ${event.date}</p>
+            <h1 class="event-title">${event.title}</h1>
+            <p class="event-desc">${event.description}</p>
+          </div>
+        </div>
+
+        <div class="event-info container">
+          <p class="event-location">📍 ${event.city}</p>
+          <h3>À propos de cet événement</h3>
+          <p>${event.details}</p>
+          <p class="highlight-big-orange">
+            📌 Sauvegardez la date… et rendez-vous sur place, vous ne le regretterez pas !
+          </p>
+        </div>
+      `;
+    }
+
+    window.addEventListener("DOMContentLoaded", loadEventDetails);
+  </script>
+</body>
+</html>

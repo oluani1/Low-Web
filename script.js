@@ -1,4 +1,3 @@
-let allEvents = [];
 let displayedCount = 0;
 const limit = 10;
 
@@ -7,6 +6,7 @@ const categoryFilters = document.getElementById("category-filters");
 const eventGrid = document.getElementById("event-grid");
 const loadMoreBtn = document.getElementById("load-more");
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
   // --------- Carrousel ----------
   const slides = document.querySelectorAll(".slide");
@@ -46,10 +46,16 @@ async function loadEvents() {
   } catch (error) {
     console.error("Erreur de chargement :", error);
   }
+=======
+// ✅ Utiliser directement les données définies dans allEvents
+function loadEvents() {
+  generateCategoryFilters();
+  renderEvents();
+>>>>>>> 9c7bf9d (evenements finaux)
 }
 
 function generateCategoryFilters() {
-  const categories = ["Toutes", ...new Set(allEvents.map(e => e.category))];
+  const categories = ["Toutes", ...new Set(allEvents.map(e => e.category).filter(Boolean))];
   categories.forEach(cat => {
     const btn = document.createElement("button");
     btn.textContent = cat;
@@ -67,8 +73,10 @@ function generateCategoryFilters() {
 function renderEvents(filter = "Toutes") {
   eventGrid.innerHTML = "";
   displayedCount = 0;
+
   const filtered = allEvents.filter(event => {
-    const matchSearch = searchBar.value.toLowerCase() === "" || event.title.toLowerCase().includes(searchBar.value.toLowerCase());
+    const matchSearch = searchBar.value.toLowerCase() === "" ||
+      event.title.toLowerCase().includes(searchBar.value.toLowerCase());
     const matchCategory = filter === "Toutes" || event.category === filter;
     return matchSearch && matchCategory;
   });
@@ -82,6 +90,10 @@ function showMore(filteredEvents) {
   next.forEach(event => {
     const card = document.createElement("div");
     card.className = "event-card";
+<<<<<<< HEAD
+=======
+    const encodedTitle = encodeURIComponent(event.title);
+>>>>>>> 9c7bf9d (evenements finaux)
     card.innerHTML = `
       <img src="${event.image}" alt="${event.title}" loading="lazy">
       <h3>${event.title}</h3>
@@ -95,8 +107,17 @@ function showMore(filteredEvents) {
   loadMoreBtn.style.display = displayedCount >= filteredEvents.length ? "none" : "block";
 }
 
+<<<<<<< HEAD
 // Recherche dynamique
 searchBar.addEventListener("input", () => {
   const currentCategory = document.querySelector(".filter-btn.active")?.textContent || "Toutes";
   renderEvents(currentCategory);
 });
+=======
+searchBar.addEventListener("input", () =>
+  renderEvents(document.querySelector(".filter-btn.active")?.textContent || "Toutes")
+);
+
+// ✅ Appeler le chargement dès que le DOM est prêt
+window.addEventListener("DOMContentLoaded", loadEvents);
+>>>>>>> 9c7bf9d (evenements finaux)
